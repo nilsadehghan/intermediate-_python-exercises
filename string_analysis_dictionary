@@ -1,0 +1,40 @@
+sentence=input("Enter your String:")
+def string_analysis(sentence:str):
+    num_chars=len((sentence))    #the total number of characters in the string
+    num_words=len(sentence.split())  #the total number of words in the string
+    avg_word_length=sum(len(word)for word in sentence.split())/num_words  #the average length of a word in the string
+    digit=""
+    alpha=""
+    uppercase_chars=""
+    lowercase_chars=""
+    num_lowercase_chars=0 #if you don't do this ,when the first character in the sentence is not lowercase or uppercase ,you will get error .
+    num_uppercase_chars=0
+    for i in sentence:
+        if i.isdigit():
+
+          digit+=i
+          num_digit=len(digit) #the total number of digits in the string
+        else:
+
+          alpha+=i
+          num_alpha_chars=len(alpha) # the total number of alphabetic characters in the string
+
+
+        if i.isupper() :
+            uppercase_chars += i
+            num_uppercase_chars = len(uppercase_chars) #the number of uppercase characters in the string
+        else:
+            lowercase_chars += i
+            num_lowercase_chars =len(lowercase_chars) #the number of lowercase characters in the string
+
+
+    print({"num_chars":num_chars,
+                   "num_words":num_words,
+                   "avg_word_length":avg_word_length,
+                   "num_alpha_chars":num_alpha_chars,
+                   "num_uppercase_chars":num_uppercase_chars,
+                   "num_lowercase_chars":num_lowercase_chars
+
+                       })
+
+string_analysis(sentence)
