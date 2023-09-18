@@ -1,0 +1,19 @@
+import datetime
+# mixin class
+class LoggerMixin():
+    def log(self,text):
+        #we want to  print out the given message to the console with a timestamp in the format `"%Y-%m-%d %H:%M:%S"
+        timestap=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(text,"\nThe date is:",timestap)
+
+class Person(LoggerMixin):
+    def __init__(self,name="",age=""):
+        self.name=name
+        self.age=age
+
+    def introduce(self):
+        print(f"I am {self.name} and My age is {self.age}")
+
+s=Person("nilsa","20")
+s.introduce()
+s.log("Hi!!")
