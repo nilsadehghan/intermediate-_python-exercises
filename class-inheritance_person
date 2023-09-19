@@ -1,0 +1,37 @@
+class Person:
+    def __init__(self,name="",age=""):
+        self.name=name
+        self.age=age
+    def show(self):
+        print(f"I am {self.name} and my age is {self.age}.")
+
+
+#Student class inherits from the Person class
+class Student(Person):
+    def __init__(self,grade="",**kwargs):
+        super().__init__(**kwargs)
+        self.grade=grade
+
+    def show(self):
+        super().show()
+        print(f"My grade is {self.grade}.")
+
+#Teacher class inherits from the Person class
+class Teacher(Person):
+    def __init__(self, subject="",**kwargs):
+        super().__init__(**kwargs)
+        self. subject= subject
+
+    def show(self):
+        super().show()
+        print(f"subject:{self.subject}")
+
+def func(obj):
+
+    obj.show()
+
+
+student=Student(name="mike",age="10",grade="3")
+teacher=Teacher(name="mary",age="30",subject="math")
+func(student)
+func(teacher)
