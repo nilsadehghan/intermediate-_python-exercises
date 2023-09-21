@@ -1,0 +1,19 @@
+Title=input("Enter the title of the book:")
+Author=input("Enter the Author of the book:")
+price= int(input("Enter the price of the book:"))
+quantity=int(input("Enter the quantity of the book:"))
+def get_book_details(Title,Author,price,quantity):
+    info={'Title':Title,'Author':Author,'price': price,'quantity':quantity}
+    return info
+
+def calculate_order_cost(price,quantity):
+    total=price*quantity
+    return total
+
+def format_order_summary(info,total):
+    print(f"Title:{info['Title']},Author:{info['Author']},price:{info['price']},quantity:{info['quantity']},Total_cost:{total}")
+
+
+Book_info=get_book_details(Title, Author, price, quantity)
+Total_cost=calculate_order_cost(price,quantity)
+format_order_summary(Book_info, Total_cost)
