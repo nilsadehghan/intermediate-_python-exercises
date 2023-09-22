@@ -1,0 +1,39 @@
+# Composition is a type of relationship in object-oriented programming where one class contains an instance of another class as a member variable
+
+
+class Shape:
+    def __init__(self,type):
+      self.type=type
+
+class Sphere:
+    def volume_Sp(self):
+        return 4 / 3 * 3.14 * self.radius ** 3
+
+
+    def __init__(self,radius):
+        self.shape = Shape('Sphere')
+        self.radius=radius
+        self.volume_S=self.volume_Sp()
+
+
+    def info_S(self):
+        return f"The shape is {self.shape.type} and the volume is {self.volume_S}"
+
+class Cube:
+    def volume_cu(self):
+        return self.a ** 3
+
+    def __init__(self, a):
+        self.shape = Shape('Cube')
+        self.a = a
+        self.volume_C = self.volume_cu()
+
+
+
+    def info_C(self):
+        return f"The shape is {self.shape.type} and the volume is {self.volume_C}"
+
+b=Cube(3)
+print(b.info_C())
+c=Sphere(2)
+print(c.info_S())
